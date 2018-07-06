@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 
 import com.example.dubo.StephenApplication;
+import com.example.dubo.payalibaba.R;
 import com.tencent.mm.sdk.modelbase.BaseReq;
 import com.tencent.mm.sdk.modelbase.BaseResp;
 import com.tencent.mm.sdk.openapi.IWXAPI;
@@ -17,7 +18,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //mainInitMethod(WXPayEntryActivity.this);
+        setContentView(R.layout.activity_main);
         try {
             WXApi = WXAPIFactory.createWXAPI(WXPayEntryActivity.this, MainWeiXinPayActivity.openIdForWeiXin, false);
             WXApi.handleIntent(getIntent(), WXPayEntryActivity.this);
