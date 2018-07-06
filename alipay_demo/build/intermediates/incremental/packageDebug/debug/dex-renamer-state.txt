@@ -1,0 +1,4 @@
+#Fri Jul 06 16:43:08 CST 2018
+base.0=C\:\\Users\\dubo\\Desktop\\PayAlibaba-master\\PayAlibaba-master\\alipay_demo\\build\\intermediates\\transforms\\dexMerger\\debug\\0
+path.0=classes.dex
+renamed.0=classes.dex

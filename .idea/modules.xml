@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/PayAlibaba-master.iml" filepath="$PROJECT_DIR$/PayAlibaba-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/alipay_demo/alipay_demo.iml" filepath="$PROJECT_DIR$/alipay_demo/alipay_demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sport/sport.iml" filepath="$PROJECT_DIR$/sport/sport.iml" />
+    </modules>
+  </component>
+</project>
