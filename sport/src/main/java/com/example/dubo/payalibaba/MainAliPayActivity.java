@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.dubo.payalibaba.other.MyALipayUtils;
+
 import network.VickyConfig;
 
 public class MainAliPayActivity extends AppCompatActivity {

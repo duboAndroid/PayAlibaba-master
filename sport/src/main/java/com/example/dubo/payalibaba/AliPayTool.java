@@ -14,7 +14,6 @@ import java.util.Random;
 import singnUtils.AliPayRSAUtil;
 import singnUtils.AliPayResult;
 
-//自已项目的
 public class AliPayTool {
     private MainAliPayActivity baseActivity;
     private String outTradeNoStr;

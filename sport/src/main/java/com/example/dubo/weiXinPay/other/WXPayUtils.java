@@ -98,16 +98,12 @@ public class WXPayUtils {
         }
         sb.append("key=");
         sb.append(key);
-
         String packageSign = getMessageDigest(sb.toString().getBytes()).toUpperCase();
         return packageSign;
     }
 
     /**
      * md5加密
-     *
-     * @param buffer
-     * @return
      */
     private String getMessageDigest(byte[] buffer) {
         char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
@@ -131,19 +127,14 @@ public class WXPayUtils {
 
     /**
      * 获取随机数
-     *
-     * @return
      */
     private String genNonceStr() {
         Random random = new Random();
         return getMessageDigest(String.valueOf(random.nextInt(10000)).getBytes());
     }
 
-
     /**
      * 获取时间戳
-     *
-     * @return
      */
     private long genTimeStamp() {
         return System.currentTimeMillis() / 1000;
@@ -225,6 +216,4 @@ public class WXPayUtils {
             return this;
         }
     }
-
-
 }

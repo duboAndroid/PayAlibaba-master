@@ -44,6 +44,15 @@ public class StephenRequestAsyncTask extends AsyncTask<String, Integer, String> 
         this.requestCallback = requestCallback;
     }
 
+    public StephenRequestAsyncTask(Context activity,String requestWebUrl, String requestHttpType, boolean showLoading, RequestCallback requestCallback) {//json(回调处理结果)
+        this.isParamJson = true;
+        this.activity = activity;
+        this.requestWebUrl = requestWebUrl;
+        this.requestHttpType = requestHttpType;
+        this.showLoading = showLoading;
+        this.requestCallback = requestCallback;
+    }
+
     public StephenRequestAsyncTask(Context activity, Handler mainHandler, String requestWebUrl, int requestHttpCode, String requestHttpType, boolean showLoading, List<NameValuePair> nameValuePairParams) {//form
         this.isParamJson = false;
         this.activity = activity;
