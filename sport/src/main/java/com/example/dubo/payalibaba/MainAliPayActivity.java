@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import network.VickyConfig;
 
-public class MainActivity extends AppCompatActivity {
+public class MainAliPayActivity extends AppCompatActivity {
 
     // 商户PID
     //public static final String PARTNER = "2018031902403741";
@@ -55,11 +55,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         this.mainHandler = new MainHandler(this.getMainLooper());
         //------------- 自己的项目
-        findViewById(R.id.pay).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.pay1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Toast.makeText(MainActivity.this, "\"appid\",\"商户名\",\"商户私钥\" + \n 不能不空", Toast.LENGTH_SHORT).show();
-                (new StephenThirdPayTool(MainActivity.this)).startAliPayPayment(PARTNER, SELLER, RSA_PRIVATE, "测试支付", "apple", 0.01);
+                //Toast.makeText(MainAliPayActivity.this, "\"appid\",\"商户名\",\"商户私钥\" + \n 不能不空", Toast.LENGTH_SHORT).show();
+                (new AliPayTool(MainAliPayActivity.this)).startAliPayPayment(PARTNER, SELLER, RSA_PRIVATE, "测试支付", "apple", 0.01);
             }
         });
 
@@ -115,15 +115,15 @@ public class MainActivity extends AppCompatActivity {
     protected void disposeMainHandlerCallMethod(Message msg) {//处理handler消息
         switch (msg.what) {
             case VickyConfig.msg_alipay:
-                (new StephenThirdPayTool(MainActivity.this)).alipayPaymentOperationResult((String) msg.obj, new StephenThirdPayTool.PaymentResultListener() {
+                (new AliPayTool(MainAliPayActivity.this)).alipayPaymentOperationResult((String) msg.obj, new AliPayTool.PaymentResultListener() {
                     @Override
                     public void paymentResult(boolean isSuccess) {
                         if (isSuccess) {
                             //paymentUserOrder();
-                            Toast.makeText(MainActivity.this,"支付成功", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainAliPayActivity.this,"支付成功", Toast.LENGTH_SHORT).show();
                         } else {
                             //cancelUserOrder();
-                            Toast.makeText(MainActivity.this,"支付失败", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainAliPayActivity.this,"支付失败", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

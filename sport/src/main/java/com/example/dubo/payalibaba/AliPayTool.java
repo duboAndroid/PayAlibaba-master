@@ -15,12 +15,12 @@ import singnUtils.AliPayRSAUtil;
 import singnUtils.AliPayResult;
 
 //自已项目的
-public class StephenThirdPayTool {
-    private MainActivity baseActivity;
+public class AliPayTool {
+    private MainAliPayActivity baseActivity;
     private String outTradeNoStr;
     public static final int msg_alipay = -6;
 
-    public StephenThirdPayTool(MainActivity baseActivity) {
+    public AliPayTool(MainAliPayActivity baseActivity) {
         this.baseActivity = baseActivity;
         //生成默认订单号
         String key = getSystemCurDateTime("MMddHHmmss");
@@ -28,7 +28,7 @@ public class StephenThirdPayTool {
         this.outTradeNoStr = key.substring(0, 15);
     }
 
-    public StephenThirdPayTool(MainActivity baseActivity, String outTradeNoStr) {
+    public AliPayTool(MainAliPayActivity baseActivity, String outTradeNoStr) {
         this.baseActivity = baseActivity;
         this.outTradeNoStr = outTradeNoStr;
     }
