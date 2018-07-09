@@ -5,7 +5,7 @@ import android.app.Application;
 import com.example.dubo.weiXinPay.MainWeiXinPayActivity;
 
 //当应用配置了多个进程的时候,application对象的onCreate方法就会执行多次
-public class StephenApplication extends Application {
+public class MyApplication extends Application {
     private MainWeiXinPayActivity mainActivity;
     public static String weiXinFlag;//微信相关标识码
 
@@ -27,6 +27,6 @@ public class StephenApplication extends Application {
     }
 
     public static void setWeiXinFlag(String weiXinFlag) {
-        StephenApplication.weiXinFlag = weiXinFlag;
+        MyApplication.weiXinFlag = weiXinFlag;
     }
 }

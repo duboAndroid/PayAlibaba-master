@@ -3,7 +3,7 @@ package com.example.dubo.weiXinPay;
 import android.app.Activity;
 import android.os.Bundle;
 
-import com.example.dubo.StephenApplication;
+import com.example.dubo.MyApplication;
 import com.example.dubo.payalibaba.R;
 import com.tencent.mm.sdk.modelbase.BaseReq;
 import com.tencent.mm.sdk.modelbase.BaseResp;
@@ -35,11 +35,11 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler {
         if (null != resp) {
             switch (resp.errCode) {
                 case BaseResp.ErrCode.ERR_OK://成功
-                    ((StephenApplication)getApplication()).setWeiXinFlag(PaySuccess);
+                    ((MyApplication)getApplication()).setWeiXinFlag(PaySuccess);
                     //StephenToolUtils.showShortHintInfo(WXPayEntryActivity.this,"微信支付成功!");
                     break;
                 default:
-                    ((StephenApplication)getApplication()).setWeiXinFlag(PayFailure);
+                    ((MyApplication)getApplication()).setWeiXinFlag(PayFailure);
                     //StephenToolUtils.showShortHintInfo(WXPayEntryActivity.this,"抱歉,微信支付失败,请重试:");
                     break;
             }//end of switch

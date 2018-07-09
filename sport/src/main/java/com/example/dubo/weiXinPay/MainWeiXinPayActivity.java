@@ -6,7 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.dubo.StephenApplication;
+import com.example.dubo.MyApplication;
 import com.example.dubo.payalibaba.R;
 
 public class MainWeiXinPayActivity extends AppCompatActivity {
@@ -18,7 +18,6 @@ public class MainWeiXinPayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_weixin);
-        //------------- 自己的项目
         findViewById(R.id.pay1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,9 +61,9 @@ public class MainWeiXinPayActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        String weiXinFlag = ((StephenApplication) getApplication()).getWeiXinFlag();
+        String weiXinFlag = ((MyApplication) getApplication()).getWeiXinFlag();
         if (!TextUtils.isEmpty(weiXinFlag)) {//微信支付回调
-            ((StephenApplication) getApplication()).setWeiXinFlag(null);
+            ((MyApplication) getApplication()).setWeiXinFlag(null);
             if(WXPayEntryActivity.PaySuccess.equals(weiXinFlag)){
                 Toast.makeText(MainWeiXinPayActivity.this,"success pay",Toast.LENGTH_SHORT).show();
                 //paymentUserOrder();

@@ -84,10 +84,7 @@ public class WXPayUtils {
         payThread.start();
     }
 
-    /**
-     * 调起微信APP支付，签名
-     * 生成签名
-     */
+    //调起微信APP支付，签名 生成签名
     private String genPackageSign(LinkedHashMap<String, String> params, String key) {
         StringBuilder sb = new StringBuilder();
         for (Map.Entry<String, String> entry : params.entrySet()) {
@@ -102,9 +99,7 @@ public class WXPayUtils {
         return packageSign;
     }
 
-    /**
-     * md5加密
-     */
+    //md5加密
     private String getMessageDigest(byte[] buffer) {
         char hexDigits[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'};
         try {
@@ -125,17 +120,13 @@ public class WXPayUtils {
         }
     }
 
-    /**
-     * 获取随机数
-     */
+    //获取随机数
     private String genNonceStr() {
         Random random = new Random();
         return getMessageDigest(String.valueOf(random.nextInt(10000)).getBytes());
     }
 
-    /**
-     * 获取时间戳
-     */
+    //获取时间戳
     private long genTimeStamp() {
         return System.currentTimeMillis() / 1000;
     }
